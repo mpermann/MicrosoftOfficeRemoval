@@ -98,6 +98,9 @@ else
     echo "Leave MAU for update purposes"
 fi
 
+# Run inventory update to reflect removal of apps and components 
+JAMF_BINARY recon
+
 DIALOG=$(/bin/launchctl asuser "$USER_ID" /usr/bin/sudo -u "$CURRENT_USER" "$JAMF_HELPER" -windowType utility -windowPosition lr -title "$TITLE" -description "$DESCRIPTION" -icon "$LOGO" -button1 "$BUTTON1" -defaultButton "$DEFAULT_BUTTON")
 if [ "$DIALOG" = "0" ] # Check if the default OK button was clicked
 then
