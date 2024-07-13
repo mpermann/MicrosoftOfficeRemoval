@@ -3,15 +3,15 @@
 # Name: MicrosoftOfficeRemoval.sh
 # Date: 05-04-2022
 # Author: Michael Permann
-# Version: 1.0.1
-# Modified: 05-04-2022
+# Version: 1.0.2
+# Modified: 07-13-2024
 # Credits: What to remove is based on information from the following Microsoft support document.
 # https://support.microsoft.com/en-us/office/uninstall-office-for-mac-eefa1199-5b58-43af-8a3d-b73dc1a8cae3
 # Purpose: Remove Microsoft Office 2021 including preferences, receipts and other associatd files from computer.
 
 CURRENT_USER=$(scutil <<< "show State:/Users/ConsoleUser" | awk '/Name :/ && ! /loginwindow/ { print $3 }')
 USER_ID=$(/usr/bin/id -u "$CURRENT_USER")
-LOGO="/Library/Application Support/HeartlandAEA11/Images/HeartlandLogo@512px.png"
+LOGO="/Library/Management/PCC/Images/PCC1Logo@512px.png"
 JAMF_HELPER="/Library/Application Support/JAMF/bin/jamfHelper.app/Contents/MacOS/jamfHelper"
 JAMF_BINARY=$(which jamf)
 EDGE="/Applications/Microsoft Edge.app"
